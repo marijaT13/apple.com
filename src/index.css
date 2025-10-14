@@ -20,9 +20,9 @@
   src: url("/fonts/bold.otf");
 }
 
-* {
+/* * {
   scrollbar-color: var(--color-dark-100) var(--color-black);
-}
+} */
 
 :root {
   --gradient-color: linear-gradient(
@@ -374,10 +374,9 @@ body {
                 #f2416b 74%,
                 #eb7500 100%
               );
-             
+              background-clip: text;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
-             background-clip: text;
             }
           }
         }
@@ -390,10 +389,9 @@ body {
 
             .green-gradient {
               background: linear-gradient(90deg, #35a98a 0%, #6dd400 100%);
-             
+              background-clip: text;
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
-               background-clip: text;
             }
           }
         }
