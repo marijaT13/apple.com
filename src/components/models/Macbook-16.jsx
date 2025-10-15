@@ -12,12 +12,20 @@ import React, { useEffect } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import useMacBookStore from '../../store';
 import { noChangeParts } from '../../constants';
-import { Color, Scene } from 'three';
+import { Color, SRGBColorSpace } from 'three';
+
 
 export default function MacBookModel16(props) {
   const { nodes, materials, scene } = useGLTF('/models/macbook-16-transformed.glb')
   const texture = useTexture('/screen.png');
+  // Ensures the texture is treated as sRGB no washed-out or overly dark colors correct gama handeling in color-managed pipelines
+  texture.colorSpace = SRGBColorSpace; 
+ //flags the texture's update so Three.js knows it needs to be re-uploaded to the GPU
+  texture.needsUpdate = true;
+
+
   const {color} = useMacBookStore();
+
    useEffect(()=>{
     scene.traverse((child)=>{
       if(child.isMesh){
