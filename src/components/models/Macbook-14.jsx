@@ -12,10 +12,10 @@ import React, { useEffect } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 import useMacBookStore from '../../store';
 import { noChangeParts } from '../../constants';
-import { Color } from 'three';
+import { Color, Scene } from 'three';
 
 export default function MacBookModel14(props) {
-  const { nodes, materials } = useGLTF('/models/macbook-14-transformed.glb');
+  const { nodes, materials, scene } = useGLTF('/models/macbook-14-transformed.glb');
   const {color} = useMacBookStore();
   const texture = useTexture('/screen.png');
 

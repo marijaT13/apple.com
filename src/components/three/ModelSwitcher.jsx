@@ -20,7 +20,7 @@ const fadeMeshes= (group, opacity) =>{
 //the function checks if the child is a mesh(has a mesh), and if so, sets its material to transparent
 //and animates it to the given opacity over the duration
 
-const moveGroup=(group, x) =>{ 
+const moveGroup = (group, x) => { 
     if(!group) return;
     gsap.to(group.position, {x, duration: ANIMATION_DURATION});
 }
@@ -31,6 +31,7 @@ const ModelSwitcher = ({scale, isMobile}) => {
     const largeMacbookRef= useRef();
 
     const showLargeMacbook = scale === 0.08 || scale === 0.05;
+    
     const controlsConfig ={
         snap: true,
         speed:1,
@@ -40,22 +41,21 @@ const ModelSwitcher = ({scale, isMobile}) => {
         config:{mass:1, tension:0, friction:26}, //realworldphysics
     }
 
-    useGSAP(()=>{
-        if(showLargeMacbook){
-        moveGroup(smallMacbookRef.current, -OFFSET_DISTANCE);
-        moveGroup(largeMacbookRef.current, 0);
+    useGSAP(() => {
+        if(showLargeMacbook) {
+            moveGroup(smallMacbookRef.current, -OFFSET_DISTANCE);
+            moveGroup(largeMacbookRef.current, 0);
 
-        fadeMeshes(smallMacbookRef.current, 0);
-        fadeMeshes(largeMacbookRef.current, 1);  
-        }else{
-        moveGroup(smallMacbookRef.current, 0);
-        moveGroup(largeMacbookRef.current, OFFSET_DISTANCE);
+            fadeMeshes(smallMacbookRef.current, 0);
+            fadeMeshes(largeMacbookRef.current, 1);
+        } else {
+            moveGroup(smallMacbookRef.current, 0);
+            moveGroup(largeMacbookRef.current, OFFSET_DISTANCE);
 
-        fadeMeshes(smallMacbookRef.current, 1);
-        fadeMeshes(largeMacbookRef.current, 0);  
+            fadeMeshes(smallMacbookRef.current, 1);
+            fadeMeshes(largeMacbookRef.current, 0);
         }
-       
-    },[scale])
+    }, [scale])
 
     return(
         <>
