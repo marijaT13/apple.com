@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 const Hero = () => {
     const videoRef= useRef();
     useEffect(()=>{
-        if(videoRef.current) videoRef.current.playbackRate = 3.5; //plays at a faster speed
+        if(videoRef.current) videoRef.current.playbackRate = 3.8; //plays at a faster speed
     },[]);
     return (
         <section id="hero">
@@ -17,7 +17,8 @@ const Hero = () => {
             <button type="button" onClick={() => { /* Navigate to purchase page */ }}>
                 Buy
             </button>
-            <p>From $1599 or $133/mo for 12 months</p>        </section>
+            <p>From $1599 or $133/mo for 12 months</p>        
+        </section>
     )
 }
 
