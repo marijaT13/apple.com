@@ -9,7 +9,7 @@ const Hero = () => {
         <section id="hero">
             <div>
                 <h1>MacBook Pro</h1>
-                <img src="/photos/title.png" alt="MacBook title"/>
+                <img src="/title.png" alt="MacBook title"/>
             </div>
             <video ref={videoRef} src="/videos/hero.mp4" autoPlay muted playsInline/> {/*autoplay muted and playsInline means without buttons showing*/}
             
