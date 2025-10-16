@@ -42,4 +42,4 @@ const StudioLights = () => {
         </group>
     )
 }
-export default StudioLights
+export default StudioLights;

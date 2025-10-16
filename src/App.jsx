@@ -18,8 +18,8 @@ const App = () => {
             <ProductViewer/>
             <Showcase/>
             <Performance/>
-            {/* <Features/>
-            <Highlights/>
+             <Features/>
+            {/*<Highlights/>
             <Footer/> */}
         </main>
     )
