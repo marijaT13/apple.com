@@ -40,7 +40,7 @@ const Performance =() =>{
             scrollTrigger:{
                 trigger:sectionRef.current,
                 start:"top bottom",
-                end:"bottom top",
+                end:"center center",
                 scrub:1,
                 invalidateOnRefresh:true,
             },
