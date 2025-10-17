@@ -20,7 +20,7 @@ const App = () => {
             <Performance/>
             <Features/>
             <Highlights/>
-            {/* <Footer/> */}
+            <Footer/>
         </main>
     )
 }
